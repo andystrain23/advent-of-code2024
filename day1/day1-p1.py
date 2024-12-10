@@ -14,8 +14,8 @@ list_b = []
 #split the values between two lists
 for line in lines:
     parts = line.split()
-    list_a.append(parts[0])
-    list_b.append(parts[1])
+    list_a.append(int(parts[0]))
+    list_b.append(int(parts[1]))
         
 
 # return the sorted lists to work with
@@ -24,11 +24,7 @@ sorted_b = sorted(list_b)
 
 # for each value in the list, get its counterpart, work out which is bigger, and then subtract the smaller to find the distance
 for x in range(len(sorted_a)):
-    if int(sorted_a[x]) > int(sorted_b[x]):
-        distance = int(sorted_a[x]) - int(sorted_b[x])
-    else:
-        distance = int(sorted_b[x]) - int(sorted_a[x])
-    total_distance += distance
+    total_distance += abs(sorted_a[x] - sorted_b[x])
 
 
 # part 2 starts here
